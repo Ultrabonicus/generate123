@@ -149,7 +149,7 @@
     \t\t</tr>
     \t</tbody>
     </table>
-    `.replace(/\r?\n|\r/g, '').replace(/"/g,'\"');
+    `.replace(/\r?\n|\r/g, '').replace(/"/g,'\\"');
     target.innerHTML = body;
     textarea2.value = body;
     textarea2.select();
