@@ -7,16 +7,17 @@
 <body>
 <textarea id="txtarea">
 </textarea>
-<button id="btn"> click </button>
+<br>
+<button id="btn"> click </button> <span> Скачать файл? </span> <input id="checkbox1" type="checkbox" checked />
+<br>
 <textarea id="txtarea2"></textarea>
 <div id="target"></div>
 </body>
 <script>
   const btn = document.querySelector('#btn');
-
   const target = document.querySelector('#target');
-
   const textarea2 = document.querySelector('#txtarea2');
+  const checkbox1 = document.querySelector('#checkbox1');
 
   function download(filename, text) {
     var element = document.createElement('a');
@@ -156,7 +157,10 @@
 
     /* Copy the text inside the text field */
     document.execCommand("copy");
-//    download('json.json', body)
+
+    if(checkbox1.checked) {
+      download('json.json', body)
+    }
   }
 
   btn.onclick = generate;
