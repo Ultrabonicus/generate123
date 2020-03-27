@@ -149,7 +149,8 @@
     \t\t</tr>
     \t</tbody>
     </table>
-    `.replace(/\r?\n|\r/g, '').replace(/"/g,'\\"');
+    `.replace(/\r?\n|\r/g, '');
+    const escaped = body.replace(/"/g,'\\"');
     target.innerHTML = body;
     textarea2.value = body;
     textarea2.select();
@@ -159,7 +160,7 @@
     document.execCommand("copy");
 
     if(checkbox1.checked) {
-      download('json.json', body)
+      download('template.txt', escaped)
     }
   }
 
