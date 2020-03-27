@@ -37,6 +37,13 @@
     const mid = textareaText
       .split('\n')
       .map((textLine) => {
+          if(textLine === "") {
+              return '&nbsp'
+          } else {
+              return textLine;
+          }
+      })
+      .map(textLine => {
         return `
           <p style='margin:0cm;margin-bottom:.0001pt;line-height:150%;font-size:15px;font-family:"Calibri","sans-serif";text-align:justify;text-indent:35.4pt;'><span style='font-family:"Tahoma","sans-serif";'>${textLine}</span></p>
         `;
