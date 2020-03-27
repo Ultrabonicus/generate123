@@ -8,12 +8,15 @@
 <textarea id="txtarea">
 </textarea>
 <button id="btn"> click </button>
+<textarea id="txtarea2"></textarea>
 <div id="target"></div>
 </body>
 <script>
   const btn = document.querySelector('#btn');
 
   const target = document.querySelector('#target');
+
+  const textarea2 = document.querySelector('#txtarea2');
 
   function download(filename, text) {
     var element = document.createElement('a');
@@ -147,12 +150,13 @@
     </table>
     `;
     target.innerHTML = body;
-    target.select();
-    target.setSelectionRange(0, 99999); /*For mobile devices*/
+    textarea2.value = body;
+    textarea2.select();
+    textarea2.setSelectionRange(0, 99999); /*For mobile devices*/
 
     /* Copy the text inside the text field */
     document.execCommand("copy");
-    download('json.json', body)
+//    download('json.json', body)
   }
 
   btn.onclick = generate;
